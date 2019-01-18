@@ -1,5 +1,5 @@
 # K25_CSDL_Cassandra
-K25_CSDL_Cassandra chua file import du lieu mysql, cassandra, generate data:
+K25_CSDL_Cassandra contains file for importing  mysql data , cassandra data, generate data:
 1. Create directory at: /opt/data
 2. Run script: generate_data.sh
 3. For import to mysql:
