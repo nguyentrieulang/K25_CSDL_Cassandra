@@ -1,0 +1,55 @@
+innodb_buffer_pool_size = 4G 
+innodb_log_buffer_size = 256M
+innodb_log_file_size = 1G
+innodb_write_io_threads = 16
+innodb_flush_log_at_trx_commit = 0
+
+
+
+CREATE DATABASE `che_do_dinh_duong` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */;
+CREATE TABLE `bang_dinh_duong` (
+  `id` int(11) NOT NULL,
+  `nk_id` int(11) DEFAULT NULL,
+  `bua_an` int(11) DEFAULT NULL,
+  `mon_chinh` int(11) DEFAULT NULL,
+  `canh` int(11) DEFAULT NULL,
+  `thit` int(11) DEFAULT NULL,
+  `hoa_qua` int(11) DEFAULT NULL,
+  `do_uong` int(11) DEFAULT NULL,
+  `ngay` int(11) DEFAULT NULL,
+  `thang` int(11) DEFAULT NULL,
+  `nam` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `bua_an` (
+  `bua_an_id` int(11) NOT NULL,
+  `ten_bua` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`bua_an_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `loai_mon_an` (
+  `loai_mon_an_id` int(11) NOT NULL,
+  `ten_loai` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`loai_mon_an_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+CREATE TABLE `mon_an` (
+  `mon_an_id` int(11) NOT NULL,
+  `ten_mon_an` varchar(45) DEFAULT 'Khong biet',
+  `loai_mon_an_id` int(11) DEFAULT '0',
+  PRIMARY KEY (`mon_an_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `nhan_khau` (
+  `nk_id` int(11) NOT NULL,
+  `ho` varchar(45) DEFAULT NULL,
+  `ten` varchar(45) DEFAULT NULL,
+  `gioi_tinh` int(11) DEFAULT '0',
+  `vung_mien` int(11) DEFAULT NULL,
+  PRIMARY KEY (`nk_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `vung_mien` (
+  `vung_id` int(11) NOT NULL,
+  `ten_vung` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`vung_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
