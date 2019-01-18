@@ -1,0 +1,8 @@
+CREATE KEYSPACE che_do_dinh_duong WITH replication = {'class':'SimpleStrategy', 'replication_factor': 1 } ;
+
+CREATE TABLE vung_mien ( vung_id int PRIMARY KEY ,ten_vung text ) ;
+CREATE TABLE nhan_khau ( nk_id int PRIMARY KEY ,ho text, ten text , gioi_tinh int , vung_mien int ) ;
+CREATE TABLE mon_an ( mon_an_id int PRIMARY KEY ,ten_mon_an text, loai_mon_an_id int ) ;
+CREATE TABLE loai_mon_an ( loai_mon_an_id int PRIMARY KEY ,ten_loai text ) ;
+CREATE TABLE bua_an ( bua_an_id int PRIMARY KEY ,ten_bua text ) ;
+CREATE TABLE bang_dinh_duong ( id int,nk_id int  , bua_an int , mon_chinh int , canh int , thit int , hoa_qua int  , do_uong int , ngay int , thang int , nam int , PRIMARY KEY(nam, thang, id) ) ;
